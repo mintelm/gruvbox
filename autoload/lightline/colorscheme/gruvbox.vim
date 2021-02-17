@@ -26,6 +26,11 @@ if exists('g:lightline')
   let s:aqua   = s:getGruvColor('GruvboxAqua')
   let s:orange = s:getGruvColor('GruvboxOrange')
   let s:green = s:getGruvColor('GruvboxGreen')
+  let s:red = s:getGruvColor('GruvboxRed')
+
+  " custom colors
+  let s:custom_lt_blue = s:getGruvColor('CustomLightBlue')
+  let s:custom_cyan = s:getGruvColor('CustomCyan')
 
   let s:p = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, 'tabline':{}, 'terminal':{}}
   let s:p.normal.left = [ [ s:bg0, s:fg4, 'bold' ], [ s:fg4, s:bg2 ] ]
@@ -50,8 +55,18 @@ if exists('g:lightline')
   let s:p.tabline.tabsel = [ [ s:bg0, s:fg4 ] ]
   let s:p.tabline.middle = [ [ s:bg0, s:bg0 ] ]
   let s:p.tabline.right = [ [ s:bg0, s:orange ] ]
-  let s:p.normal.error = [ [ s:bg0, s:orange ] ]
-  let s:p.normal.warning = [ [ s:bg2, s:yellow ] ]
+  let s:p.normal.error = [ [ s:bg0, s:red ] ]
+  let s:p.normal.warning = [ [ s:bg2, s:orange ] ]
+
+  " custom coc components
+  let s:p.normal.cocerror = [ [ s:red, s:bg1 ] ]
+  let s:p.normal.cocwarn = [ [ s:orange, s:bg1 ] ]
+  let s:p.normal.cocinfo = [ [ s:custom_lt_blue, s:bg1 ] ]
+  let s:p.normal.cochint = [ [ s:custom_cyan, s:bg1 ] ]
+  let s:p.insert.cocerror = [ [ s:red, s:bg2 ] ]
+  let s:p.insert.cocwarn = [ [ s:orange, s:bg2 ] ]
+  let s:p.insert.cocinfo = [ [ s:custom_lt_blue, s:bg2 ] ]
+  let s:p.insert.cochint = [ [ s:custom_cyan, s:bg2 ] ]
 
   let g:lightline#colorscheme#gruvbox#palette = lightline#colorscheme#flatten(s:p)
 endif
