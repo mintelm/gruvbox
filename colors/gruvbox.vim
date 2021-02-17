@@ -166,6 +166,10 @@ let s:vim_bg = ['bg', 'bg']
 let s:vim_fg = ['fg', 'fg']
 let s:none = ['NONE', 'NONE']
 
+"custom colors
+let s:custom_lt_blue = ['#00bfff', 39]
+let s:custom_cyan = ['#00ffff', 51]
+
 " determine relative colors
 if s:is_dark
   let s:bg0  = s:gb.dark0
@@ -448,6 +452,10 @@ call s:HL('GruvboxAquaBold', s:aqua, s:none, s:bold)
 call s:HL('GruvboxOrange', s:orange)
 call s:HL('GruvboxOrangeBold', s:orange, s:none, s:bold)
 
+" custom colors
+call s:HL('CustomLightBlue', s:custom_lt_blue)
+call s:HL('CustomCyan', s:custom_cyan)
+
 call s:HL('GruvboxRedSign', s:red, s:sign_column, s:invert_signs)
 call s:HL('GruvboxGreenSign', s:green, s:sign_column, s:invert_signs)
 call s:HL('GruvboxYellowSign', s:yellow, s:sign_column, s:invert_signs)
@@ -455,7 +463,6 @@ call s:HL('GruvboxBlueSign', s:blue, s:sign_column, s:invert_signs)
 call s:HL('GruvboxPurpleSign', s:purple, s:sign_column, s:invert_signs)
 call s:HL('GruvboxAquaSign', s:aqua, s:sign_column, s:invert_signs)
 call s:HL('GruvboxOrangeSign', s:orange, s:sign_column, s:invert_signs)
-
 " }}}
 
 " Vanilla colorscheme ---------------------------------------------------------
@@ -892,26 +899,26 @@ call s:HL('multiple_cursors_visual', s:none, s:bg2)
 " }}}
 " coc.nvim: {{{
 
-hi! link CocErrorSign GruvboxRedSign
-hi! link CocWarningSign GruvboxOrangeSign
-hi! link CocInfoSign GruvboxYellowSign
-hi! link CocHintSign GruvboxBlueSign
+hi! link CocErrorSign GruvboxRed
+hi! link CocWarningSign GruvboxOrange
+hi! link CocInfoSign CustomLightBlue
+hi! link CocHintSign CustomCyan
 hi! link CocErrorFloat GruvboxRed
 hi! link CocWarningFloat GruvboxOrange
-hi! link CocInfoFloat GruvboxYellow
-hi! link CocHintFloat GruvboxBlue
+hi! link CocInfoFloat CustomLightBlue
+hi! link CocHintFloat CustomCyan
 hi! link CocDiagnosticsError GruvboxRed
 hi! link CocDiagnosticsWarning GruvboxOrange
-hi! link CocDiagnosticsInfo GruvboxYellow
-hi! link CocDiagnosticsHint GruvboxBlue
+hi! link CocDiagnosticsInfo CustomLightBlue
+hi! link CocDiagnosticsHint CustomCyan
 
 hi! link CocSelectedText GruvboxRed
 hi! link CocCodeLens GruvboxGray
 
 call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
 call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:orange)
-call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
-call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
+call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:custom_lt_blue)
+call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:custom_cyan)
 
 " }}}
 
